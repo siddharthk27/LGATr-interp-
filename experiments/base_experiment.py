@@ -270,13 +270,11 @@ class BaseExperiment:
             zip_name = os.path.join(self.cfg.run_dir, "source.zip")
             LOGGER.debug(f"Saving source to {zip_name}")
             zipf = zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED)
-            path_code = os.path.join(self.cfg.base_dir, "lloca")
             path_experiment = os.path.join(self.cfg.base_dir, "experiments")
-            for path in [path_code, path_experiment]:
-                for root, _, files in os.walk(path):
-                    for file in files:
-                        file_path = os.path.join(root, file)
-                        zipf.write(file_path, os.path.relpath(file_path, path))
+            for root, _, files in os.walk(path_experiment):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    zipf.write(file_path, os.path.relpath(file_path, path_experiment))
             zipf.close()
 
     def _init_logger(self):
@@ -587,6 +585,8 @@ class BaseExperiment:
                 yield from iterable
                 epoch += 1
 
+        self.nonfinite_loss_counter = 0
+
         iterator = iter(cycle(self.train_loader))
         for step in range(self.cfg.training.iterations):
             # training
@@ -757,6 +757,13 @@ class BaseExperiment:
 
         if not torch.isfinite(loss):
             LOGGER.warning(f"Loss is nonfinite (loss={loss}) at iteration {step}")
+            self.nonfinite_loss_counter += 1
+            if self.nonfinite_loss_counter >= 5:
+                raise ValueError(
+                    f"Loss has been nonfinite for {self.nonfinite_loss_counter} consecutive iterations, aborting"
+                )
+        else:
+            self.nonfinite_loss_counter = 0
 
         # collect metrics
         if self.world_size > 1:
