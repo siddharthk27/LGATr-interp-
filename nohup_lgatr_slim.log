@@ -1,0 +1,445 @@
+nohup: ignoring input
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/mlflow/utils/requirements_utils.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[2026-02-28 22:57:37 I] Creating new experiment lgatr_slim_toptag/slim_run1
+[2026-02-28 22:57:37 I] Running with save=False, i.e. no outputs will be saved
+[2026-02-28 22:57:38 I] Creating new experiment lgatr_slim_toptag/slim_run1
+[2026-02-28 22:57:38 I] Running with save=False, i.e. no outputs will be saved
+[2026-02-28 22:57:38 I] Creating new experiment lgatr_slim_toptag/slim_run1
+[2026-02-28 22:57:38 I] Running with save=False, i.e. no outputs will be saved
+[2026-02-28 22:57:38 I] Creating new experiment lgatr_slim_toptag/slim_run1
+[2026-02-28 22:57:38 D] Saving source to ./runs/lgatr_slim_toptag/slim_run1/source.zip
+[2026-02-28 22:57:38 I] Using device cuda; see 4 GPUs in total
+[2026-02-28 22:57:38 I] ### Starting experiment lgatr_slim_toptag/slim_run1 (mlflowid=None) (jobid=None) (git_hash=c9d67d7) ###
+[2026-02-28 22:57:38 I] Instantiated model LGATrSlim with 2031201 learnable parameters
+[2026-02-28 22:57:38 I] Frames approach: IdentityFrames() (0 learnable parameters)
+[2026-02-28 22:57:38 I] Not using EMA
+[2026-02-28 22:57:39 I] Creating TopTaggingDataset from data/toptagging_full.npz
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:519: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler(enabled=use_amp)
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:519: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler(enabled=use_amp)
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:519: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler(enabled=use_amp)
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+[2026-02-28 23:00:12 I] Finished creating datasets after 153.16 s = 2.55 min
+[2026-02-28 23:00:12 I] Constructed dataloaders with train_batches=9461, test_batches=790, val_batches=788, batch_size=128 (training), 512 (evaluation)
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:519: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler(enabled=use_amp)
+[2026-02-28 23:00:12 I] Starting to train for 200000 iterations = 21.1 epochs on a dataset with 9461 batches using early stopping with patience 100 while validating every 5000 iterations
+/home/jay_agarwal_2022/.local/lib/python3.10/site-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-02-28 23:00:49 I] Finished iteration 1 after 36.82s, training time estimate: 0.02min = 0.00h
+[2026-02-28 23:00:50 I] Finished iteration 10 after 37.96s, training time estimate: 378.93min = 6.32h
+[2026-02-28 23:01:03 I] Finished iteration 100 after 50.82s, training time estimate: 466.58min = 7.78h
+[2026-02-28 23:03:13 I] Finished iteration 1000 after 181.39s, training time estimate: 481.90min = 8.03h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-02-28 23:13:07 I] Finished iteration 5000 after 775.06s, training time estimate: 492.16min = 8.20h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-02-28 23:25:20 I] Finished iteration 10000 after 1508.16s, training time estimate: 490.45min = 8.17h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-02-28 23:37:38 I] Finished iteration 15000 after 2245.55s, training time estimate: 490.83min = 8.18h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-02-28 23:49:56 I] Finished iteration 20000 after 2983.95s, training time estimate: 491.19min = 8.19h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 00:02:24 I] Finished iteration 25000 after 3731.82s, training time estimate: 492.67min = 8.21h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 00:14:53 I] Finished iteration 30000 after 4481.09s, training time estimate: 493.81min = 8.23h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 00:27:22 I] Finished iteration 35000 after 5230.44s, training time estimate: 494.63min = 8.24h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 00:39:47 I] Finished iteration 40000 after 5975.06s, training time estimate: 494.85min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 00:52:08 I] Finished iteration 45000 after 6715.67s, training time estimate: 494.73min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 01:04:47 I] Finished iteration 50000 after 7474.60s, training time estimate: 495.85min = 8.26h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 01:17:02 I] Finished iteration 55000 after 8209.66s, training time estimate: 495.32min = 8.26h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 01:29:22 I] Finished iteration 60000 after 8949.99s, training time estimate: 495.18min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 01:41:41 I] Finished iteration 65000 after 9688.59s, training time estimate: 494.96min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 01:54:04 I] Finished iteration 70000 after 10432.29s, training time estimate: 495.02min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 02:06:24 I] Finished iteration 75000 after 11171.58s, training time estimate: 494.88min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 02:18:47 I] Finished iteration 80000 after 11914.78s, training time estimate: 494.91min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 02:31:05 I] Finished iteration 85000 after 12652.70s, training time estimate: 494.74min = 8.25h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 02:42:59 I] Finished iteration 90000 after 13366.85s, training time estimate: 493.70min = 8.23h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 02:55:02 I] Finished iteration 95000 after 14089.77s, training time estimate: 493.09min = 8.22h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 03:07:13 I] Finished iteration 100000 after 14821.17s, training time estimate: 492.81min = 8.21h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 03:19:29 I] Finished iteration 105000 after 15557.26s, training time estimate: 492.71min = 8.21h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 03:31:59 I] Finished iteration 110000 after 16307.41s, training time estimate: 493.05min = 8.22h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 03:44:09 I] Finished iteration 115000 after 17036.94s, training time estimate: 492.76min = 8.21h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 03:56:17 I] Finished iteration 120000 after 17764.67s, training time estimate: 492.44min = 8.21h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 04:06:54 I] Finished iteration 125000 after 18401.96s, training time estimate: 489.74min = 8.16h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 04:17:36 I] Finished iteration 130000 after 19043.52s, training time estimate: 487.35min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 04:29:38 I] Finished iteration 135000 after 19766.23s, training time estimate: 487.15min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 04:41:42 I] Finished iteration 140000 after 20489.91s, training time estimate: 486.98min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 04:53:54 I] Finished iteration 145000 after 21221.92s, training time estimate: 487.01min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 05:05:56 I] Finished iteration 150000 after 21943.58s, training time estimate: 486.82min = 8.11h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 05:18:15 I] Finished iteration 155000 after 22682.59s, training time estimate: 487.01min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 05:30:29 I] Finished iteration 160000 after 23417.02s, training time estimate: 487.09min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 05:42:41 I] Finished iteration 165000 after 24148.52s, training time estimate: 487.10min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 05:55:04 I] Finished iteration 170000 after 24891.82s, training time estimate: 487.35min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 06:07:10 I] Finished iteration 175000 after 25618.14s, training time estimate: 487.26min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 06:19:20 I] Finished iteration 180000 after 26347.86s, training time estimate: 487.24min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 06:31:28 I] Finished iteration 185000 after 27075.72s, training time estimate: 487.19min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 06:43:34 I] Finished iteration 190000 after 27801.98s, training time estimate: 487.11min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 06:55:40 I] Finished iteration 195000 after 28527.69s, training time estimate: 487.02min = 8.12h
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_experiment.py:694: UserWarning: `parameters` is an empty generator, no gradient clipping will occur.
+  torch.nn.utils.clip_grad_norm_(
+[2026-03-01 07:07:41 I] Finished iteration 200000 after 29249.29s, training time estimate: 486.87min = 8.11h
+[2026-03-01 07:07:41 I] Finished training for 199999 iterations = 21.1 epochs after 487.49min = 8.12h
+[2026-03-01 07:07:41 I] Spend 27718.22s training and 822.53s validating
+[2026-03-01 07:07:41 I] ### Starting to evaluate model on train dataset with 1211000 elements, batchsize 32 ###
+[2026-03-01 07:10:59 I] Accuracy on train dataset: 0.9440
+[2026-03-01 07:10:59 I] AUC score on train dataset: 0.9878
+[2026-03-01 07:10:59 I] Rejection rate train dataset: 3435 (epsS=0.3), 734 (epsS=0.5), 72 (epsS=0.8)
+[2026-03-01 07:10:59 I] table train: IdentityFrames (200000 iterations) & 2031201 & 0.9440 & 0.9878 & 3435 & 734 & 72 \\
+[2026-03-01 07:10:59 I] ### Starting to evaluate model on test dataset with 404000 elements, batchsize 128 ###
+[2026-03-01 07:11:18 I] Accuracy on test dataset: 0.9419
+[2026-03-01 07:11:18 I] AUC score on test dataset: 0.9870
+[2026-03-01 07:11:18 I] Rejection rate test dataset: 2298 (epsS=0.3), 532 (epsS=0.5), 64 (epsS=0.8)
+[2026-03-01 07:11:18 I] table test: IdentityFrames (200000 iterations) & 2031201 & 0.9419 & 0.9870 & 2298 & 532 & 64 \\
+[2026-03-01 07:11:18 I] ### Starting to evaluate model on val dataset with 403000 elements, batchsize 128 ###
+[2026-03-01 07:11:36 I] Accuracy on val dataset: 0.9406
+[2026-03-01 07:11:36 I] AUC score on val dataset: 0.9861
+[2026-03-01 07:11:36 I] Rejection rate val dataset: 2101 (epsS=0.3), 410 (epsS=0.5), 59 (epsS=0.8)
+[2026-03-01 07:11:36 I] table val: IdentityFrames (200000 iterations) & 2031201 & 0.9406 & 0.9861 & 2101 & 410 & 59 \\
+[2026-03-01 07:11:36 I] Creating plots in ./runs/lgatr_slim_toptag/slim_run1/plots_0
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_plots.py:54: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend(fontsize=FONTSIZE_LEGEND, frameon=False, loc="upper left")
+/home/jay_agarwal_2022/tagger-quantization/experiments/base_plots.py:51: UserWarning: Data has no positive values, and therefore cannot be log-scaled.
+  ax.set_yscale("log")
+/home/jay_agarwal_2022/tagger-quantization/experiments/tagging/plots.py:144: RuntimeWarning: divide by zero encountered in divide
+  ax.plot(tpr, 1 / fpr, color=color)
+/home/jay_agarwal_2022/tagger-quantization/experiments/tagging/plots.py:171: RuntimeWarning: divide by zero encountered in divide
+  ax.plot(tpr, tpr / fpr**0.5, color=color)
+/home/jay_agarwal_2022/tagger-quantization/experiments/tagging/plots.py:171: RuntimeWarning: invalid value encountered in divide
+  ax.plot(tpr, tpr / fpr**0.5, color=color)
+[2026-03-01 07:11:39 I] GPU_RAM_max_used = 0.9 GB
+[2026-03-01 07:11:39 I] GPU_RAM_max_total = 47.4 GB
+[2026-03-01 07:11:39 I] CPU_RAM_max_used = 12.8 GB
+[2026-03-01 07:11:39 I] Finished experiment lgatr_slim_toptag/slim_run1 after 494.03min = 8.23h
+NCCL version 2.27.5+cuda12.9
+
+real	494m32.399s
+user	1958m38.250s
+sys	24m56.869s

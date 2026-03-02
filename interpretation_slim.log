@@ -1,0 +1,111 @@
+nohup: ignoring input
+W0301 21:30:10.217000 2599525 torch/_dynamo/convert_frame.py:1676] [6/8] torch._dynamo hit config.recompile_limit (8)
+W0301 21:30:10.217000 2599525 torch/_dynamo/convert_frame.py:1676] [6/8]    function: 'hook' (/home/jay_agarwal_2022/tagger-quantization/experiments/tagging/interpret_slim.py:123)
+W0301 21:30:10.217000 2599525 torch/_dynamo/convert_frame.py:1676] [6/8]    last reason: 6/7: len(self._qk_store) == 7                                 # self._qk_store.append(  # tagger-quantization/experiments/tagging/interpret_slim.py:135 in hook
+W0301 21:30:10.217000 2599525 torch/_dynamo/convert_frame.py:1676] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0301 21:30:10.217000 2599525 torch/_dynamo/convert_frame.py:1676] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/compile/programming_model.recompilation.html
+================================================================================
+L-GATr-slim Interpretation Pipeline
+================================================================================
+
+[1/3] Loading model...
+Loaded L-GATr-slim model from runs/lgatr_slim_toptag/slim_run1/models/model_run0.pt
+
+[2/3] Loading test data...
+
+[3/3] Extracting attention maps...
+  Jet 0: 17 particles
+  Layer 0 attn: shape=(8, 17, 17), range=[0.00000, 0.81250]
+Saved attention distribution to interpretation_results_slim/attention/jet0_QCD_distribution.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer11_head7.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet0_QCD_heatmap_layer0_head7.png
+Saved η-φ attention plot to interpretation_results_slim/attention/jet0_QCD_etaphi.png
+Saved attention distribution to interpretation_results_slim/attention/jet1_QCD_distribution.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer11_head7.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet1_QCD_heatmap_layer0_head7.png
+Saved η-φ attention plot to interpretation_results_slim/attention/jet1_QCD_etaphi.png
+Saved attention distribution to interpretation_results_slim/attention/jet2_QCD_distribution.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer11_head7.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet2_QCD_heatmap_layer0_head7.png
+Saved η-φ attention plot to interpretation_results_slim/attention/jet2_QCD_etaphi.png
+Saved attention distribution to interpretation_results_slim/attention/jet3_QCD_distribution.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer11_head7.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet3_QCD_heatmap_layer0_head7.png
+Saved η-φ attention plot to interpretation_results_slim/attention/jet3_QCD_etaphi.png
+Saved attention distribution to interpretation_results_slim/attention/jet4_QCD_distribution.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer11_head7.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head0.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head1.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head2.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head3.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head4.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head5.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head6.png
+Saved attention heatmap to interpretation_results_slim/attention/jet4_QCD_heatmap_layer0_head7.png
+Saved η-φ attention plot to interpretation_results_slim/attention/jet4_QCD_etaphi.png
+
+✓ Done! Results saved to interpretation_results_slim
+================================================================================
