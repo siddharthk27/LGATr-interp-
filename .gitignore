@@ -22,3 +22,6 @@ data/jetclass/
 *.npz
 *.ipynb_checkpoint*
 notebooks/*.pdf
+
+results/
+*.log

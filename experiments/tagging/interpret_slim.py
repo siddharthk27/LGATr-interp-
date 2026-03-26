@@ -316,6 +316,62 @@ class LGATrSlimInterpreter:
             print(f"Saved attention heatmap to {save_path}")
         plt.close()
 
+    def plot_averaged_attention_grid(self, avg_attn, n_events, label="", save_path=None):
+        """
+        Plot all attention heads in a single grid figure, averaged over many events.
+
+        This replicates the style of IAFormer Figure 4 (arXiv:2505.03258):
+        each subplot shows one head's mean attention matrix across n_events jets.
+
+        Parameters
+        ----------
+        avg_attn : np.ndarray, shape (num_heads, K, K)
+            Element-wise mean attention weights across n_events jets (final layer).
+        n_events : int
+            Number of jets averaged over.
+        label : str
+            Jet class label shown in the title, e.g. "Top" or "QCD".
+        save_path : Path or str, optional
+        """
+        import numpy as np
+
+        num_heads = avg_attn.shape[0]
+        ncols = 4
+        nrows = (num_heads + ncols - 1) // ncols
+
+        fig, axes = plt.subplots(nrows, ncols, figsize=(5 * ncols, 4 * nrows))
+        if nrows == 1:
+            axes = axes[np.newaxis, :]
+
+        title = "L-GATr-slim  Averaged Attention Maps"
+        if label:
+            title += f"  ({label})"
+        title += f"\nFinal Layer · {n_events} events"
+        fig.suptitle(title, fontsize=16)
+
+        for h in range(num_heads):
+            ax = axes[h // ncols, h % ncols]
+            sns.heatmap(
+                avg_attn[h],
+                ax=ax,
+                cmap="viridis",
+                cbar=True,
+                square=True,
+                xticklabels=False,
+                yticklabels=False,
+            )
+            ax.set_title(f"Head {h}", fontsize=12)
+
+        # Hide unused subplots
+        for h in range(num_heads, nrows * ncols):
+            axes[h // ncols, h % ncols].set_visible(False)
+
+        plt.tight_layout()
+        if save_path:
+            plt.savefig(save_path, dpi=300, bbox_inches="tight")
+            print(f"Saved averaged attention grid to {save_path}")
+        plt.close()
+
     def visualize_attention_on_eta_phi(
         self,
         fourmomenta: np.ndarray,

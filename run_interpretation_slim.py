@@ -15,6 +15,7 @@ python run_interpretation_slim.py \
 
 import sys
 import os
+import numpy as np
 
 # Ensure tagger-quantization package is importable
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -115,6 +116,55 @@ def main(args):
             save_path=attention_dir / f"jet{jet_idx}_{label}_etaphi.png",
         )
 
+    # ------------------------------------------------------------------
+    # 4. Averaged attention over many events (IAFormer Figure 4 style)
+    # ------------------------------------------------------------------
+    # Averaging over many jets cancels per-event noise and reveals the
+    # model's learned routing patterns — the key insight from arXiv:2505.03258.
+    #
+    # Token layout per jet (LGATr-slim, from embedding.py):
+    #   [0]        lightlike beam spurion +z  (beam_reference=lightlike, two_beams=True)
+    #   [1]        lightlike beam spurion -z
+    #   [2]        time spurion               (add_time_reference=True)
+    #   [3 .. N+2] real particles, pT-ordered
+    # We skip the first `token_offset` rows/cols so only particle-to-particle
+    # attention is shown, matching IAFormer Figure 4's axes.
+    print("\n[4/4] Computing averaged attention over many events...")
+    K = args.truncate_particles  # particle count used for averaging
+    num_heads = 8                 # LGATr-slim has 8 attention heads
+    offset = args.token_offset    # non-particle tokens to skip
+
+    accum = {"sum": np.zeros((num_heads, K, K)), "count": 0}
+
+    for batch in test_loader:
+        if accum["count"] >= args.avg_events:
+            break
+
+        batch_results = interpreter.extract_attention_for_batch(
+            batch, num_jets=len(batch.ptr) - 1
+        )
+
+        for jet_idx in range(len(batch_results["attention_maps"])):
+            n_p = batch_results["num_particles"][jet_idx]
+            # n_p counts total tokens (spurions + real particles); need K real particles
+            if (n_p - offset) < K:
+                continue
+
+            # Final layer, all heads — slice to particle-only K×K block
+            final_attn = batch_results["attention_maps"][jet_idx][-1]  # (H, N, N)
+            accum["sum"] += final_attn[:, offset:offset + K, offset:offset + K]
+            accum["count"] += 1
+
+    if accum["count"] > 0:
+        avg_attn = accum["sum"] / accum["count"]
+        interpreter.plot_averaged_attention_grid(
+            avg_attn,
+            n_events=accum["count"],
+            label="All",
+            save_path=attention_dir / f"avg_attn_all_{accum['count']}events.png",
+        )
+        print(f"  Averaged over {accum['count']} jets (all classes)")
+
     print(f"\n✓ Done! Results saved to {output_dir}")
     print("=" * 80)
 
@@ -150,6 +200,19 @@ if __name__ == "__main__":
     parser.add_argument(
         "--attn-threshold", type=float, default=0.1,
         help="Minimum attention weight to draw a line in the η-φ plot",
+    )
+    parser.add_argument(
+        "--avg-events", type=int, default=500,
+        help="Number of jets to average for the IAFormer-style attention grid",
+    )
+    parser.add_argument(
+        "--truncate-particles", type=int, default=20,
+        help="Truncate jets to this many particles for averaging (jets with fewer are skipped)",
+    )
+    parser.add_argument(
+        "--token-offset", type=int, default=3,
+        help="Non-particle tokens prepended per jet (spurions only, no global token in slim). "
+             "Default 3 = lightlike beam +z + lightlike beam -z + time spurion.",
     )
 
     args = parser.parse_args()
