@@ -222,8 +222,11 @@ class LGATrSlimInterpreter:
                 attn = self._compute_attn_weights(qk["q"], qk["k"])
                 # attn now covers all tokens including global token / spurions.
                 # Slice to physical particles only for cleaner visualizations.
+                # Token layout: global(0), lightlike+z(1), lightlike-z(2), time(3), phys_0(4)...
+                # TOKEN_OFFSET=4 skips the global token and 3 spurions.
                 n_phys = len(fourmomenta_np)
-                attn_phys = attn[:, :n_phys, :n_phys]
+                TOKEN_OFFSET = 4  # global(1) + lightlike+z(1) + lightlike-z(1) + time(1)
+                attn_phys = attn[:, TOKEN_OFFSET:TOKEN_OFFSET + n_phys, TOKEN_OFFSET:TOKEN_OFFSET + n_phys]
 
                 if jet_idx == 0 and qk["layer_idx"] == 0:
                     print(
