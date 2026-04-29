@@ -124,6 +124,9 @@ def get_attention_mask(
     elif attention_backend == "flex":
         mask = get_flex_attention_mask(batch=batch)
         return {"block_mask": mask}
+    elif attention_backend == "math":
+        mask = get_xformers_attention_mask(batch=batch, dtype=dtype, materialize=True)
+        return {"attn_mask": mask}
     else:
         raise ValueError(
             f"Unsupported attention backend: {attention_backend}. "

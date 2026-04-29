@@ -9,7 +9,7 @@ Same approach as run_equivariance_test.py (full LGATr):
   - Check h_s invariance and h_v equivariance per layer
 
 h_s : Lorentz-INVARIANT (scalar channels)   → h_s(Λx) == h_s(x)
-h_v : Lorentz-EQUIVARIANT (4-vector channels) → h_v(Λx) == h_v(x) @ Λ_4x4.T
+h_v : Lorentz-EQUIVARIANT (4-vector channels) → h_v(Λx) == h_v(x) @ Λ_4x4
 
 Usage:
   cd /home/jay_agarwal_2022/tagger-quantization
@@ -90,7 +90,7 @@ def load_slim(checkpoint_path, config_path, device):
     from hydra.utils import instantiate
     cfg = OmegaConf.load(config_path)
     cfg.model.net.compile = False
-    cfg.model.attention_backend = "flex"   # xformers/math crash at batch_size=1; flex works
+    cfg.model.attention_backend = "math"
     model = instantiate(cfg.model)
     state = torch.load(checkpoint_path, map_location="cpu", weights_only=False)["model"]
     if any(k.startswith("net.module.") for k in state):
@@ -110,6 +110,11 @@ def embed_slim_jet(p4_np, cfg, device):
     return embed_tagging_data(x, s, ptr, cfg.data)
 
 
+def clone_embedding(emb):
+    """Clone tensor values because LGATrSlimWrapper mutates ptr/fourmomenta in-place."""
+    return {k: v.clone() if torch.is_tensor(v) else v for k, v in emb.items()}
+
+
 def apply_lambda_to_embedding(emb, Lambda_t, device):
     """
     Apply Λ_4x4 to ALL fourmomenta (particles + spurions) in the slim embedding.
@@ -117,8 +122,8 @@ def apply_lambda_to_embedding(emb, Lambda_t, device):
     Note: tagging_features (log_pt, deta, etc.) are lab-frame scalars; we leave them
     unchanged here, so h_s errors will reflect slim's non-invariant scalar inputs.
     """
-    emb_boost = {k: v for k, v in emb.items()}
-    emb_boost["fourmomenta"] = emb["fourmomenta"] @ Lambda_t  # (n_tokens, 4) @ (4,4)
+    emb_boost = clone_embedding(emb)
+    emb_boost["fourmomenta"] = emb_boost["fourmomenta"] @ Lambda_t  # (n_tokens, 4) @ (4,4)
     return emb_boost
 
 
@@ -143,7 +148,7 @@ def run_slim_emb(model, emb):
         hooks.append(blk.register_forward_hook(_make_hook(li + 1)))
 
     with torch.no_grad():
-        result = model(emb)
+        result = model(clone_embedding(emb))
     for h in hooks:
         h.remove()
 
